@@ -1,20 +1,131 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml10/DTD/xhtml10strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="us">
   <head>
-    <title>Ron Wright's Homepage</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Ron Wright&rsquo;s Homepage</title>
+    <meta charset="utf-8">
+    <link href="jquery/ui/jquery-ui.css" rel="stylesheet">
+    <style>
+    body {
+      font: 62.5% "Trebuchet MS", sans-serif;
+      margin: 50px;
+      background-color: #050540;
+      color: #8080f0;
+    }
+    .demoHeaders {
+      margin-top: 2em;
+    }
+    #dialog-link {
+      padding: .4em 1em .4em 20px;
+      text-decoration: none;
+      position: relative;
+    }
+    #dialog-link span.ui-icon {
+      margin: 0 5px 0 0;
+      position: absolute;
+      left: .2em;
+      top: 50%;
+      margin-top: -8px;
+    }
+    #icons {
+      margin: 0;
+      padding: 0;
+    }
+    #icons li {
+      margin: 2px;
+      position: relative;
+      padding: 4px 0;
+      cursor: pointer;
+      float: left;
+      list-style: none;
+    }
+    #icons span.ui-icon {
+      float: left;
+      margin: 0 4px;
+    }
+    .fakewindowcontain .ui-widget-overlay {
+      position: absolute;
+    }
+    select {
+      width: 200px;
+    }
+    #me-img {
+      width: 30%;
+      height: auto;
+    }
+    #header {
+      text-align: center;
+    }
+    #footer {
+      text-align: center;
+    }
+    .center-object {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #tabs .ui-widget-content {
+      overflow: auto;
+    }
+    </style>
   </head>
   <body>
-    <p>
-      Welcome to the home page of me, Ron Wright!
-    </p>
-    <p>
-      Below, you will find some links to some of my GitHub projects:
-    </p>
-    <ul>
-      <li/> <a href="https://github.com/logiconcepts819/email_visualization">CS 467 Email Visualization from Spring 2013</a>
-      <li/> <a href="https://github.com/logiconcepts819/ladspa-mbandcomp">A LADSPA plugin for multiband compression</a>
-    </ul>
+    <div class="ui-widget-header ui-corner-all center-object" id="header">
+      <h1>Ron Wright&rsquo;s Home Page</h1>
+      <h3>http://ronwright.me &middot; http://wrightway.me</h3>
+    </div>
+    &nbsp;
+    <div class="center-object" id="tabs">
+      <ul>
+        <li><a href="#tabs-1">About Me</a></li>
+        <li><a href="#tabs-2">My GitHub Projects</a></li>
+      </ul>
+      <div id="tabs-1">
+        <img id="me-img" class="center-object" src="images/me_2014-04-06.jpg"/>
+        <p>
+        This is Ron Wright, a PhD student in the department of Electrical and
+        Computer Engineering at University of Illinois at Urbana-Champaign.
+        </p>
+      </div>
+      <div id="tabs-2">
+        <ul>
+          <li>
+            <a href="https://github.com/logiconcepts819/email_visualization">
+            CS 467 Email Visualization from Spring 2013
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/logiconcepts819/ladspa-mbandcomp">
+            A LADSPA plugin for multiband compression
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="ui-widget">
+      <p id="footer">Copyright &copy; Ronald Joseph Wright.</p>
+    </div>
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery/ui/jquery-ui.js"></script>
+    <script>
+    $("#tabs").tabs();
+    var minContentHeight = 200;
+    var resizeTabs = function() {
+      var body = $("body");
+      var height = body.height();
+      var pt = parseFloat(body.css("padding-top"));
+      var pb = parseFloat(body.css("padding-bottom"));
+      var mt = parseFloat(body.css("margin-top"));
+      var mb = parseFloat(body.css("margin-bottom"));
+      var tabsContent = $("#tabs .ui-widget-content");
+      theHeight = tabsContent.height();
+      theHeight += ((((window.innerHeight - height) - pt) - pb) - mt) - mb;
+      if (theHeight < minContentHeight) {
+        theHeight = minContentHeight;
+      }
+      tabsContent.height(theHeight);
+    }
+    window.onresize = resizeTabs;
+    resizeTabs();
+    </script>
   </body>
 </html>
