@@ -263,7 +263,7 @@ hr {
 .marginbot-50{margin-bottom:50px !important;}
 
 /* inline image */
-.inline-img {height:50px;}
+.inline-img {height:42px;}
 .inline-img-small {height:1em;}
 .inline-img, .inline-img-small {
     -webkit-transition: all .2s ease-in-out;
