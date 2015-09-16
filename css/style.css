@@ -348,14 +348,14 @@ hr {
 	
 	background: url(../img/bg1.jpg) no-repeat top center fixed;
 	background-size: 100%;
-	background-color: #b4ae96;
+	background-color: #c1ae93;
 }
 
-/* Set a minimum background image width of 500 px for viewports smaller than
- * 500 px wide */
-@media (max-width: 500px) {
+/* Set a minimum background image width of 667 px for viewports smaller than
+ * 667 px wide */
+@media (max-width: 667px) {
     .intro {
-        background-size: 500px;
+        background-size: 667px;
     }
 }
 
