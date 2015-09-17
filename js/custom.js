@@ -2,7 +2,25 @@
 
 	new WOW().init();
 
-	jQuery(window).load(function() { 
+	//Code to cover the entire viewport with the background image
+	//(assuming background has aspect ratio of 4:3)
+	var resize_func = function() {
+		var intro = jQuery(".intro");
+		var width = jQuery(window).width();
+		var height = 500;
+		var mq = window.matchMedia("(min-width: 767px)");
+		if (mq.matches) {
+			height = jQuery(window).height();
+		}
+		if (3 * width < 4 * height) {
+			intro.css("background-size", "auto "+height+"px");
+		} else {
+			intro.css("background-size", width+"px");
+		}
+	};
+
+	jQuery(window).load(function() {
+		resize_func();
 		jQuery("#preloader").delay(100).fadeOut("slow");
 		jQuery("#load").delay(100).fadeOut("slow");
 	});
@@ -20,6 +38,9 @@
 			$(".brand-txt").removeClass("brand-txt-visible");
 		}
 	});
+
+	//jQuery to ensure the background image spans the entire viewport
+	$(window).resize(resize_func);
 
 	//jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {

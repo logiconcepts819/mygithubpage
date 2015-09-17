@@ -347,16 +347,6 @@ hr {
 	position:relative;
 	
 	background: url(../img/bg1.jpg) no-repeat top center fixed;
-	background-size: 100%;
-	background-color: #c1ae93;
-}
-
-/* Set a minimum background image width of 667 px for viewports smaller than
- * 667 px wide */
-@media (max-width: 667px) {
-    .intro {
-        background-size: 667px;
-    }
 }
 
 #intro.intro {
@@ -688,7 +678,7 @@ footer p {
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
-	
+
     .intro {
         height: 100%;
         padding: 0;
