@@ -7,10 +7,11 @@
 	var resize_func = function() {
 		var intro = jQuery(".intro");
 		var width = jQuery(window).width();
-		var height = 500;
-		var mq = window.matchMedia("(min-width: 767px)");
+		var height, mq = window.matchMedia("(min-width: 767px)");
 		if (mq.matches) {
 			height = jQuery(window).height();
+		} else {
+			height = jQuery("#about").position().top;
 		}
 		if (3 * width < 4 * height) {
 			intro.css("background-size", "auto "+height+"px");
