@@ -92,7 +92,15 @@ a:focus {
 }
 
 .nav.navbar-nav {
-    background-color: rgba(255,255,255,.55);
+    background-color: rgba(255,255,255,.7);
+}
+
+@supports ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
+    .nav.navbar-nav {
+        background-color: rgba(255,255,255,.45);
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
 }
 
 .navbar-custom.top-nav-collapse .nav.navbar-nav {
@@ -701,13 +709,31 @@ footer p {
 		margin-bottom: 30px;
 	}
 
-	
+    .nav.navbar-nav {
+        background-color: rgba(255,255,255,.9);
+    }
+
+    @supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+        .nav.navbar-nav {
+            background-color: rgba(255,255,255,.55);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+	}
 }
 
 @media (max-width:480px) {
 
 	.navbar-custom .nav.navbar-nav {
-    background-color: rgba(255,255,255,.55);
+    background-color: rgba(255,255,255,.9);
+    }
+
+    @supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+        .navbar-custom .nav.navbar-nav {
+            background-color: rgba(255,255,255,.55);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
 	}
 	
 	.navbar.navbar-custom.navbar-fixed-top {
