@@ -92,7 +92,7 @@ a:focus {
 }
 
 .nav.navbar-nav {
-    background-color: rgba(255,255,255,.4);
+    background-color: rgba(255,255,255,.55);
 }
 
 .navbar-custom.top-nav-collapse .nav.navbar-nav {
@@ -707,7 +707,7 @@ footer p {
 @media (max-width:480px) {
 
 	.navbar-custom .nav.navbar-nav {
-    background-color: rgba(255,255,255,.4);
+    background-color: rgba(255,255,255,.55);
 	}
 	
 	.navbar.navbar-custom.navbar-fixed-top {
