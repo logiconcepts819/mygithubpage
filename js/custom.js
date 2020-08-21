@@ -44,7 +44,7 @@
 	var resize_func = function() {
 		var intro = $(".intro");
 		var width = $(window).width();
-		var height, mq = window.matchMedia("(min-width: 767.98px)");
+		var height, mq = window.matchMedia("(min-width: 768px)");
 		if (mq.matches) {
 			height = $(window).height();
 		} else {
