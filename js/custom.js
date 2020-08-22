@@ -2,6 +2,9 @@
 
 	new WOW().init();
 
+	//2/3 constant
+	var two_thirds = 2.0/3;
+
 	//Code for determining whether the brand text will fit on the same
 	//line as the navbar
 	var brand_text_fits = function() {
@@ -39,18 +42,23 @@
 	};
 
 	//Code to cover the entire viewport with the background image
-	//(assuming background has aspect ratio of 4:3) and ensure the
+	//(assuming background has aspect ratio of 3:2) and ensure the
 	//text and menubar don't overlap
 	var resize_func = function() {
 		var intro = $(".intro");
 		var width = $(window).width();
 		var height, mq = window.matchMedia("(min-width: 768px)");
+		intro.css("height", "auto");
 		if (mq.matches) {
 			height = $(window).height();
+			if (height > parseInt(intro.css("height"))) {
+				intro.css("height", "100%");
+			}
 		} else {
 			height = $("#about").position().top;
 		}
-		if (3 * width < 4 * height) {
+		var bg_height = two_thirds * width; /* width/(3/2) */
+		if (bg_height < height) {
 			intro.css("background-size", "auto "+height+"px");
 		} else {
 			intro.css("background-size", width+"px");
